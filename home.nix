@@ -1,18 +1,10 @@
 { config, pkgs, nixGL, ... }:
 
-let 
-  nixGLwrap = pkg: config.lib.nixGL.wrap pkg;
-in {
+{
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   targets.genericLinux = {
     enable = true;
-    # nixGL = {
-    #   packages = nixGL.packages;
-    #   defaultWrapper = "mesa";
-    #   installScripts = [ "mesa" ];
-    # };
-
     gpu.enable = true;
   };
 
@@ -42,12 +34,12 @@ in {
       # megacmd # ts dont fucking work
       vscodium
       brave
-      (nixGLwrap obsidian)
-      (nixGLwrap zapzap)
+      obsidian
+      zapzap
       kdePackages.ark
-      (nixGLwrap prismlauncher)
+      prismlauncher
       kdePackages.kcalc
-      (nixGLwrap steam)
+      steam
       protonup-qt
 
       # Theming
