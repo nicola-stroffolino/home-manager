@@ -10,26 +10,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixGL = {
-      url = "github:guibou/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nixGL, ... }: 
+  outputs = { nixpkgs, home-manager, ... }: 
   let
     pkgs = import nixpkgs {
       system = "x86_64-linux";
-      overlays = [ nixGL.overlay ];
     };
   in {
     homeConfigurations = {
       "nstroffo-home" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-
-        extraSpecialArgs = {
-          inherit nixGL;
-        };
 
         modules = [ ./home.nix ];
       };
