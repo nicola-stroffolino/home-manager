@@ -40,7 +40,8 @@
     '';
   };
 
-  home.packages = [
-    pkgs.zsh-powerlevel10k
+  home.packages = with pkgs; [
+    zsh
+    zsh-powerlevel10k
   ];
 }
