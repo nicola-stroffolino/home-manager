@@ -21,7 +21,6 @@
 
     packages = with pkgs; [
       # Frameworks
-      gtk3 # probably not needed
       jdk # lts 21 (for now)
       dotnetCorePackages.sdk_9_0-bin
 
@@ -55,8 +54,13 @@
     ];
 
     sessionVariables = {
-      
-    }
+      DB_MAIN_BIN = "/usr/local/db-main/bin";
+      LD_LIBRARY_PATH = "$DB_MAIN_BIN:$DB_MAIN_BIN/../java/jre/lib/amd64/server:$LD_LIBRARY_PATH";
+    };
+
+    sessionPath  = [
+      "/usr/local/db-main/bin"
+    ];
   };
 
   # pkg argument; returns boolean wether pkg is allowed or not
