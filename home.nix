@@ -30,20 +30,28 @@
       python314
 
       # Software
-      geekbench
-      discord # probably will have to wrap
-      # megacmd # ts dont fucking work
+
+        # Essentials
       megasync
       vscodium
       brave
       obsidian
       zapzap
+
+        # Free Time
+      discord
       prismlauncher
       steam
       protonup-qt
-
+      
+        # Utilities
       kdePackages.ark
       kdePackages.kcalc
+      geekbench
+      
+       # Network
+      wireshark
+      putty
 
       # Theming
       nerd-fonts.jetbrains-mono
