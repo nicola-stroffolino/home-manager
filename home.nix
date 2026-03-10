@@ -23,11 +23,10 @@
       # Frameworks
       jdk # lts 21 (for now)
       dotnetCorePackages.sdk_9_0-bin
-
-      python313Packages.jupyterlab
-      python313Packages.jupyter-core
-      python313Packages.ipython
-      python314
+      (python313.withPackages (ps: with ps; [
+        jupyter
+        numpy
+      ]))
 
       # Software
 
